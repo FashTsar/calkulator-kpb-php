@@ -156,5 +156,76 @@ function calculationDuvetCover ($widthDuvetCover, $heightDuvetCover, $fabricWidt
     return $result;
 }
 
+function calculationSheet ($widthSheet, $heightSheet, $fabricWidth, $seam) {
+
+    /*
+     * Проверка корректности типов значений
+    */
+
+    $typeWidthSheet = gettype($widthSheet);
+    $typeHeightSheet = gettype($heightSheet);
+    $typeFabricWidth = gettype($fabricWidth);
+    $typeSeam = gettype($seam);
+
+    if ($typeWidthSheet !== "integer" || $widthSheet <= 0) {
+        return "error: incorrect type or value Width Sheet";
+    }
+    if ($typeHeightSheet !== "integer" || $heightSheet <= 0) {
+        return "error: incorrect type or value Height Sheet";
+    }
+    if ($typeFabricWidth !== "integer" || $fabricWidth <= 0) {
+        return "error: incorrect type or value Fabric Width";
+    }
+    if ($typeSeam !== "integer" || $seam <= 0) {
+        return "error: incorrect type or value Seam";
+    }
+    if ($widthSheet > $fabricWidth) {
+        return "error: width Sheet could not be more fabric Width";
+    }
+    if ($widthSheet > $heightSheet) {
+        return "error: width Sheet could not be more height Sheet";
+    }
+    if ($seam > $fabricWidth) {
+        return "error: seam could not be more fabric Width";
+    }
+    if ($seam > $widthSheet) {
+        return "error: seam could not be more width Sheet";
+    }
+    if ($seam > $heightSheet) {
+        return "error: seam could not be more height Sheet";
+    }
+
+    /*
+    * Определяем остаток от деления ширины ткани, на ширину или на высоту простыни
+    */
+
+    $segmentationWidth = $fabricWidth%($widthSheet+$seam); // остаток от деления на ширину+шов
+
+    if ($segmentationWidth === $fabricWidth) {
+        return "error: width Sheet plus seam could not be more fabric Width";
+    }
+
+    $segmentationHeight = $fabricWidth%($heightSheet+$seam); // остаток от деления на высоту+шов
+
+    /*
+     * Считаем результат в зависимости от остатка
+     */
+
+    if ($segmentationWidth <= $segmentationHeight) {
+        $countProduct = $fabricWidth/($widthSheet+$seam);
+        $countProduct = round($countProduct, 0, PHP_ROUND_HALF_DOWN);
+        $result = ($heightSheet+$seam)/$countProduct/100;
+        $result = round($result, 2, PHP_ROUND_HALF_UP);
+    } else {
+        $countProduct = $fabricWidth/($heightSheet+$seam);
+        $countProduct = round($countProduct, 0, PHP_ROUND_HALF_DOWN);
+        $result = ($widthSheet+$seam)/$countProduct/100;
+        $result = round($result, 2, PHP_ROUND_HALF_UP);
+    }
+
+    return $result;
+}
+
 echo "Количество ткани, необходимое на наволочку = ".calculationBulk(50, 70, 15, 240, 2)."<br />";
 echo "Количество ткани, необходимое на пододеяльник = ".calculationDuvetCover(150, 205, 240, 2)."<br />";
+echo "Количество ткани, необходимое на простынь = ".calculationSheet(150, 205, 240, 2)."<br />";
