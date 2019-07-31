@@ -8,6 +8,9 @@
 </head>
 
 <body>
+
+<h1>Калькулятор рассчёта ткани на КПБ от Sliza.ru</h1>
+
 <form name="Calculator" method="post" action="">
     <h4>Размеры наволочки</h4>
     <input type="number" id="widthBulk" placeholder="ширина (см.)">
