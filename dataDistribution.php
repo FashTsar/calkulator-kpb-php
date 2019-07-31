@@ -38,47 +38,47 @@ if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUE
     $typeCountBulk = gettype($countBulk);
 
     if ($typeWidthBulk !== "integer" || $widthBulk <= 0) {
-        echo "Ошибка: некорректный тип или значение Ширины Наволочки <br />";
+        echo "Ошибка: некорректный тип или значение Ширины Наволочки <br /><br />";
         $noErrors = false;
     }
     if ($typeHeightBulk !== "integer" || $heightBulk <= 0) {
-        echo "Ошибка: некорректный тип или значение Длинны Наволочки <br />";
+        echo "Ошибка: некорректный тип или значение Длинны Наволочки <br /><br />";
         $noErrors = false;
     }
     if ($typePocketBulk !== "integer" || $pocketBulk < 0) {
-        echo "Ошибка: некорректный тип или значение Кармана Наволочки <br />";
+        echo "Ошибка: некорректный тип или значение Кармана Наволочки <br /><br />";
         $noErrors = false;
     }
     if ($typeCountBulk !== "integer" || $countBulk < 0) {
-        echo "Ошибка: некорректный тип или значение Количества Наволочек <br />";
+        echo "Ошибка: некорректный тип или значение Количества Наволочек <br /><br />";
         $noErrors = false;
     }
     if ($widthBulk > $fabricWidth) {
-        echo "Ошибка: Ширина Наволочки не может быть больше Ширины Ткани <br />";
+        echo "Ошибка: Ширина Наволочки не может быть больше Ширины Ткани <br /><br />";
         $noErrors = false;
     }
     if ($widthBulk > $heightBulk) {
-        echo "Ошибка: Ширина Наволочки не может быть больше Длинны наволочки <br />";
+        echo "Ошибка: Ширина Наволочки не может быть больше Длинны наволочки <br /><br />";
         $noErrors = false;
     }
     if ($pocketBulk > $fabricWidth) {
-        echo "Ошибка: Карман Наволочки не может быть больше Ширины Ткани <br />";
+        echo "Ошибка: Карман Наволочки не может быть больше Ширины Ткани <br /><br />";
         $noErrors = false;
     }
     if ($pocketBulk > $widthBulk) {
-        echo "Ошибка: Карман Наволочки не может быть больше Ширины Наволочки <br />";
+        echo "Ошибка: Карман Наволочки не может быть больше Ширины Наволочки <br /><br />";
         $noErrors = false;
     }
     if ($pocketBulk > $heightBulk) {
-        echo "Ошибка: Карман Наволочки не может быть больше Длинны Наволочки <br />";
+        echo "Ошибка: Карман Наволочки не может быть больше Длинны Наволочки <br /><br />";
         $noErrors = false;
     }
     if ($seam > $widthBulk) {
-        echo "Ошибка: Шов не может быть больше Ширины Наволочки <br />";
+        echo "Ошибка: Шов не может быть больше Ширины Наволочки <br /><br />";
         $noErrors = false;
     }
     if ($seam > $heightBulk) {
-        echo "Ошибка: Шов не может быть больше Длинны Наволочки <br />";
+        echo "Ошибка: Шов не может быть больше Длинны Наволочки <br /><br />";
         $noErrors = false;
     }
 
@@ -88,31 +88,31 @@ if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUE
     $typeCountDuvetCover = gettype($countDuvetCover);
 
     if ($typeWidthDuvetCover !== "integer" || $widthDuvetCover <= 0) {
-        echo "Ошибка: некорректный тип или значение Ширины Пододеяльника <br />";
+        echo "Ошибка: некорректный тип или значение Ширины Пододеяльника <br /><br />";
         $noErrors = false;
     }
     if ($typeHeightDuvetCover !== "integer" || $heightDuvetCover <= 0) {
-        echo "Ошибка: некорректный тип или значение Длинны Пододеяльника <br />";
+        echo "Ошибка: некорректный тип или значение Длинны Пододеяльника <br /><br />";
         $noErrors = false;
     }
     if ($typeCountDuvetCover !== "integer" || $countDuvetCover < 0) {
-        echo "Ошибка: некорректный тип или значение Количества Пододеяльников <br />";
+        echo "Ошибка: некорректный тип или значение Количества Пододеяльников <br /><br />";
         $noErrors = false;
     }
     if ($widthDuvetCover > $fabricWidth) {
-        echo "Ошибка: Ширина Пододеяльника не может быть больше Ширины Ткани <br />";
+        echo "Ошибка: Ширина Пододеяльника не может быть больше Ширины Ткани <br /><br />";
         $noErrors = false;
     }
     if ($widthDuvetCover > $heightDuvetCover) {
-        echo "Ошибка: Ширина Пододеяльника не может быть больше Длинны Пододеяльника <br />";
+        echo "Ошибка: Ширина Пододеяльника не может быть больше Длинны Пододеяльника <br /><br />";
         $noErrors = false;
     }
     if ($seam > $widthDuvetCover) {
-        echo "Ошибка: Шов не может быть больше Ширины Пододеяльника <br />";
+        echo "Ошибка: Шов не может быть больше Ширины Пододеяльника <br /><br />";
         $noErrors = false;
     }
     if ($seam > $heightDuvetCover) {
-        echo "Ошибка: Шов не может быть больше Длинны Пододеяльника <br />";
+        echo "Ошибка: Шов не может быть больше Длинны Пододеяльника <br /><br />";
         $noErrors = false;
     }
 
@@ -122,31 +122,31 @@ if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUE
     $typeCountSheet = gettype($countSheet);
 
     if ($typeWidthSheet !== "integer" || $widthSheet <= 0) {
-        echo "Ошибка: некорректный тип или значение Ширины Простыни <br />";
+        echo "Ошибка: некорректный тип или значение Ширины Простыни <br /><br />";
         $noErrors = false;
     }
     if ($typeHeightSheet !== "integer" || $heightSheet <= 0) {
-        echo "Ошибка: некорректный тип или значение Длинны Простыни <br />";
+        echo "Ошибка: некорректный тип или значение Длинны Простыни <br /><br />";
         $noErrors = false;
     }
     if ($typeCountSheet !== "integer" || $countSheet < 0) {
-        echo "Ошибка: некорректный тип или значение Количества Простыней <br />";
+        echo "Ошибка: некорректный тип или значение Количества Простыней <br /><br />";
         $noErrors = false;
     }
     if ($widthSheet > $fabricWidth) {
-        echo "Ошибка: Ширина Простыни не может быть больше Ширины Ткани <br />";
+        echo "Ошибка: Ширина Простыни не может быть больше Ширины Ткани <br /><br />";
         $noErrors = false;
     }
     if ($widthSheet > $heightSheet) {
-        echo "Ошибка: Ширина Пододеяльника не может быть больше Длинны Простыни <br />";
+        echo "Ошибка: Ширина Пододеяльника не может быть больше Длинны Простыни <br /><br />";
         $noErrors = false;
     }
     if ($seam > $widthSheet) {
-        echo "Ошибка: Шов не может быть больше Ширины Простыни <br />";
+        echo "Ошибка: Шов не может быть больше Ширины Простыни <br /><br />";
         $noErrors = false;
     }
     if ($seam > $heightSheet) {
-        echo "Ошибка: Шов не может быть больше Длинны Простыни <br />";
+        echo "Ошибка: Шов не может быть больше Длинны Простыни <br /><br />";
         $noErrors = false;
     }
 
@@ -155,15 +155,15 @@ if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUE
     $typeSeam = gettype($seam);
 
     if ($typeFabricWidth !== "integer" || $fabricWidth <= 0) {
-        echo "Ошибка: некорректный тип или значение Ширины Ткани <br />";
+        echo "Ошибка: некорректный тип или значение Ширины Ткани <br /><br />";
         $noErrors = false;
     }
     if ($typeSeam !== "integer" || $seam < 0) {
-        echo "Ошибка: некорректный тип или значение Шва <br />";
+        echo "Ошибка: некорректный тип или значение Шва <br /><br />";
         $noErrors = false;
     }
     if ($seam > $fabricWidth) {
-        echo "Ошибка: Шов не может быть больше Ширины Ткани <br />";
+        echo "Ошибка: Шов не может быть больше Ширины Ткани <br /><br />";
         $noErrors = false;
     }
 
@@ -178,13 +178,13 @@ if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUE
     $generalResultSheet = $resultSheet*$countSheet;
     $generalResult = $resultBulk*$countBulk+$resultDuvetCover*$countDuvetCover+$resultSheet*$countSheet;
 
-    echo "Количество ткани на одну наволочку = $resultBulk м.<br />
-          Количество ткани на количество наволочек $countBulk шт. = $generalResultBulk м.<br />
-          Количество ткани на один пододеяльник = $resultDuvetCover м.<br />
-          Количество ткани на количество пододеяльников $countDuvetCover шт. = $generalResultDuvetCover м.<br />
-          Количество ткани на одну простынь = $resultSheet м.<br />
-          Количество ткани на количество простыней $countSheet шт. = $generalResultSheet м.<br />
-          Общее количество ткани = $generalResult м.";
+    echo "Количество ткани на одну наволочку = $resultBulk м.<br /><br />
+          Количество ткани на количество наволочек $countBulk шт. = $generalResultBulk м.<br /><br />
+          Количество ткани на один пододеяльник = $resultDuvetCover м.<br /><br />
+          Количество ткани на количество пододеяльников $countDuvetCover шт. = $generalResultDuvetCover м.<br /><br />
+          Количество ткани на одну простынь = $resultSheet м.<br /><br />
+          Количество ткани на количество простыней $countSheet шт. = $generalResultSheet м.<br /><br />
+          <b>Общее количество ткани = $generalResult м.</b>";
     }
 } else {
     die();
